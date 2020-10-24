@@ -1,4 +1,57 @@
-\section{Main}
+\section{Independent Models}
 
-\begin{frame}{Main}
+\begin{frame}{Statistical Models}
+    \begin{block}{planetmath.org}
+    A \emph{statistical model} is usually parameterised by a function, called a \emph{parametrisation}
+    $$ \Theta \ra \mc{P}, \quad \text{given by} \quad \theta \mapsto P_{\theta},\quad \text{so that}\quad \mc{P} = \{ P_{\theta} : \theta \in \Theta \}, $$
+    where $\Theta$ is the \emph{parameter space}. $\Theta$ is usually a subset of $\RR^{n}$.
+    \end{block}
+
+    \begin{block}{McCullagh, 2002}
+    This should be defined using category theory.
+    \end{block}
+\end{frame}
+
+\begin{frame}{Thee-Way Contingency Tbales}
+    Let $X, Y$, and $Z$ be random variables that have $a, b$, and $c$ states, respectively. A \emph{probability distribution} $P$ for these random variables is an $(a \times b \times c)$-table of non-negative numbers which sum to one.
+
+    The entries of the table $P$ are the probabilities
+    $$ P_{ijk} = \Prob(X = i; Y = j; Z = k). $$
+    The set of all distributions is a simplex $\Delta$ of dimension $abc - 1$.
+
+    A \emph{statistical model} is a subset $\mc{M}$ of $\Delta$ which can be described by polynomial equations and inequalities in the coordinates $P_{ijk}$.
+
+    Usually, the model $\mc{M}$ is presented as the image of a polynomial map $P: \Theta \ra \Delta$, where $\Theta$ is a polynomially described subset of $\Delta$.
+\end{frame}
+
+\begin{frame}{Independence}
+    The distribution $P$ is called \emph{independent} is each probability is the product of the corresponding \emph{marginal probabilities}:
+    $$ P_{ijk} = P_{i++} \cdot P_{+j+} \cdot P_{++k}. $$
+    A marginal probability is the probability of an event irrespective of the outcomes of the other variables, that is:
+    $$ P_{i++} = \Prob(X = i) = \sum_{j=1}^{b} \sum_{k=1}^{c} P_{ijk}. $$
+\end{frame}
+
+\begin{frame}{Independence Model}
+    The \emph{independence model} has the parametric representation:
+    \begin{equation*}
+        \begin{split}
+            \Theta = \Delta_{a-1} \times \Delta_{b-c} \times \Delta_{c-1} &\ra \Delta = \Delta_{abc - 1}, \\
+            (\alpha,\beta,\gamma) \mapsto (P_{ijk}) = (\alpha_{i}\beta_{j}\gamma_{k}).
+        \end{split}
+    \end{equation*}
+
+    The image is known as the \emph{Segre variety} in algebraic geometry.
+
+\end{frame}
+
+\begin{frame}{a}
+
+\end{frame}
+
+\begin{frame}{a}
+
+\end{frame}
+
+\begin{frame}{a}
+
 \end{frame}
