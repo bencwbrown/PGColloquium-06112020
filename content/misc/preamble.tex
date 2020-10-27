@@ -21,13 +21,16 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
 \usepackage{amsthm}
 \usepackage{mathrsfs}   % \mathscr
 \usepackage{stmaryrd}   % \lightning
 \usepackage{physics}
-\usepackage{pgfplotstable}
 \usepackage{booktabs}
 \usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{pgfplotstable}
 
 % -----------------------------------
 % macros
@@ -53,6 +56,16 @@
 \newcommand{\mc}[1]{\mathcal{#1}}
 
 \newcommand{\indep}{\perp \!\!\! \perp}
+\newlength{\LETTERheight}
+\newcommand*{\longleadsto}[1]{\ \raisebox{0.24\LETTERheight}{\tikz \draw [->,
+line join=round,
+decorate, decoration={
+    zigzag,
+    segment length=4,
+    amplitude=.9,
+    post=lineto,
+    post length=2pt
+}] (0,0) -- (#1,0);}\ }
 
 \newcommand{\createcontingencytable}[4]{ %
 % #1=table name
@@ -189,5 +202,5 @@
 % for pseudocode
 \usepackage[slide,linesnumbered,algoruled]{algorithm2e}
 
-\input{misc/javascript}
+%\input{misc/javascript}
 %\input{misc/html5}
