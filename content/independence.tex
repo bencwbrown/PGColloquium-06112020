@@ -1,0 +1,57 @@
+\section{Independent Models}
+
+\begin{frame}{Statistical Models}
+    \begin{block}{planetmath.org}
+    A \emph{statistical model} is usually parameterised by a function, called a \emph{parametrisation}
+    $$ \Theta \ra \mc{P}, \quad \text{given by} \quad \theta \mapsto P_{\theta},\quad \text{so that}\quad \mc{P} = \{ P_{\theta} : \theta \in \Theta \}, $$
+    where $\Theta$ is the \emph{parameter space}. $\Theta$ is usually a subset of $\RR^{n}$.
+    \end{block}
+
+    \begin{block}{McCullagh, 2002}
+    This should be defined using category theory.
+    \end{block}
+\end{frame}
+
+\begin{frame}{Two-by-Two Contingency Tables}
+    
+    A contingency table contains counts obtained by cross-classifying observed cases according to two or more discrete criteria.
+
+    \begin{block}{Example}
+        TODO: Figure (Florida death sentences)
+    \end{block}
+
+    We ask whether the sentences were made independently of the defendant's race.
+\end{frame}
+
+\begin{frame}{Two-by-Two Contingency Tables}
+    
+    \begin{itemize}
+        \item Classify using two criteria with $r$ and $c$ levels, yields two random variables $X$ and $Y$. 
+        \item Code outcomes as $[r] := \{1,\ldots, r\}$, and $[c] := \{ 1, \ldots, c \}$.
+    \end{itemize}
+    
+    All information about $X$ and $Y$ is contained in the \emph{joint probabilities}
+    $$ p_{ij} = P(X = i; Y = j), \quad i \in [r],\ j \in [c]. $$
+
+    \begin{itemize}
+        \item These in turn determine the \emph{marginal probabilities}:
+    \end{itemize}
+
+    \begin{equation*}
+        \begin{split}
+            p_{i+} &:= \sum_{j = 1}^{c} p_{ij} = P(X = i), \quad i \in [r], \\
+            p_{+j} &:= \sum_{i = 1}^{r} p_{ij} = P(Y = j), \quad j \in [c].
+        \end{split}
+    \end{equation*}
+
+\end{frame}
+
+\begin{frame}
+    \begin{block}{Definition}
+        Two random variables $X$ and $Y$ are \emph{independent} if the joint probabilities factor as $p_{ij} = p_{i+}\cdot p_{+j}$, for all $i \in [r]$ and $j \in [c]$. Denote independence of $X$ and $Y$ by $X \indep Y$.
+    \end{block}
+
+    \begin{block}{Proposition}
+        Two random variables $X$ and $Y$ are independent if and only if the $(r \times c)$-matrix $p = (p_{ij})$ has rank one.
+    \end{block}
+\end{frame}

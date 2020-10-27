@@ -1,0 +1,38 @@
+\begin{frame}{Foray Into Algebraic Geometry}
+    \begin{block}{Projective Space}
+    Playing field is $n$\emph{-dimensional projective space}, $\PP^{n}$:
+        $$ \PP^{n} := \{ (z_{0}, \ldots, z_{n}) \in \CC^{n} \} / (\vb{x} \sim \lambda \cdot \vb{y}), \quad \lambda \neq 0, $$
+    that is, its elements consists of \emph{lines through the origin} in $\CC^{n}$.
+    \end{block}
+    
+    TODO: FIGURE
+\end{frame}
+
+\begin{frame}{Varieties}
+        \emph{Varieties} are the geometric objects studied in algebraic\footnote{classical algebraic geometry} geometry, which are the \emph{vanishing sets} (Verschwindungsmenge) for polynomials.
+
+        Example:
+        $$ S^{1} = \{ (x,y) \in \RR^{2} : x^{2} + y^{2} = 1 \} = V( x^{2} + y^{2} - 1 ). $$
+
+    TODO: FIGURE
+\end{frame}
+
+\begin{frame}{Segre Varieties}
+        \emph{Segre varieties} come from $\sigma: \PP^{n} \times \PP^{m} \ra \PP^{(n+1)(m+1) - 1}$, that sends $([X],[Y])$ to the pairwise products of their components:
+            $$ \sigma : ([X_{0}, \ldots, X_{n}], [Y_{0}, \ldots, Y_{m}]) \mapsto [\ldots, X_{i}Y_{j}, \ldots ], $$
+
+        \begin{block}{Example}
+        $$\sigma : \PP^{1} \times \PP^{1} \ra \PP^{3},\ ([X_{0}, X_{1}], [Y_{0}, Y_{1}]) \mapsto [ X_{0}Y_{0}, X_{0}Y_{1}, X_{1}Y_{0}, X_{1}Y_{1} ].  $$
+        
+        Set $[ X_{0}Y_{0}, X_{0}Y_{1}, X_{1}Y_{0}, X_{1}Y_{1} ] = [Z_{0}, Z_{1}, Z_{2}, Z_{3}]$, and observe $Z_{0}Z_{3} - Z_{1}Z_{2} = 0$,
+        $$ \rightsquigarrow \det \begin{pmatrix} Z_{0} & Z_{1} \\ Z_{2} & Z_{3} \end{pmatrix} = 0 \iff \rank \begin{pmatrix} Z_{0} & Z_{1} \\ Z_{2} & Z_{3} \end{pmatrix} \leq 1. $$
+        \end{block}
+\end{frame}
+
+\begin{frame}{Determinental Varieties}
+        
+    $\sigma(\PP^{1} \times \PP^{1}) = \{ [Z_{0}, Z_{1}, Z_{2}, Z_{3}] : \rank \begin{pmatrix} Z_{0} & Z_{1} \\ Z_{2} & Z_{3} \end{pmatrix} \leq 1 \} $ is an example of a \emph{determinantal variety}.
+
+     
+
+\end{frame}

@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1603546059 "/Volumes/HDD/Projects/PG-Colloquium-Semester-1/content/presentation.tex" "/Volumes/HDD/Projects/PG-Colloquium-Semester-1/content/presentation.pdf" "presentation" 1603546059
-  "/Volumes/HDD/Projects/PG-Colloquium-Semester-1/content/presentation.aux" 1603546059 8 a94a2480d3289e625eea47cd1b285758 ""
-  "/Volumes/HDD/Projects/PG-Colloquium-Semester-1/content/presentation.tex" 1603545387 418 167eab7b3182a0852fd8090a575bccfd ""
+["pdflatex"] 1603746542 "/Volumes/HDD/Projects/PG-Colloquium-Semester-1/content/presentation.tex" "/Volumes/HDD/Projects/PG-Colloquium-Semester-1/content/presentation.pdf" "presentation" 1603746542
+  "/Volumes/HDD/Projects/PG-Colloquium-Semester-1/content/presentation.aux" 1603746542 8 a94a2480d3289e625eea47cd1b285758 ""
+  "/Volumes/HDD/Projects/PG-Colloquium-Semester-1/content/presentation.tex" 1603533413 418 167eab7b3182a0852fd8090a575bccfd ""
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1136768653 1288 655e228510b4c2a1abe905c368440826 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmss12.tfm" 1136768653 1324 37b971caf729d7edd9cbb9f9b0ea76eb ""
@@ -146,13 +146,13 @@
   "/usr/local/texlive/2020/texmf-dist/tex/latex/url/url.sty" 1388531844 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/usr/local/texlive/2020/texmf-dist/tex/latex/xcolor/xcolor.sty" 1463002160 55589 34128738f682d033422ca125f82e5d62 ""
   "/usr/local/texlive/2020/texmf-dist/web2c/texmf.cnf" 1598393674 39451 15a3ebee027466ecb89701aa91dfebaf ""
-  "/usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1603030308 2535451 eb31c87ddcb18ab1a9e9fde37af3c35a ""
+  "/usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1603034664 2535910 b89ab34c91794419410bd78942675656 ""
   "/usr/local/texlive/2020/texmf.cnf" 1586288231 577 d60164b4589a341208aff7a667fbbdcb ""
-  "misc/meta.tex" 1603545387 407 bce50ef0e46792091c6073f694e3be81 ""
-  "misc/preamble.tex" 1603545632 3585 4863520bcd645a30b93b01f29a9cafc5 ""
-  "misc/variables.tex" 1603545387 604 5970d832a564fdc8d7ffe3a711536232 ""
-  "presentation.tex" 1603545387 418 167eab7b3182a0852fd8090a575bccfd ""
+  "misc/meta.tex" 1603533195 407 bce50ef0e46792091c6073f694e3be81 ""
+  "misc/preamble.tex" 1603746164 3646 5813a25101221695ed1295a406b1594c ""
+  "misc/variables.tex" 1603746535 563 9a18b6c9da1e10c2155862b5b3de3989 ""
+  "presentation.tex" 1603533413 418 167eab7b3182a0852fd8090a575bccfd ""
   (generated)
   "/Volumes/HDD/Projects/PG-Colloquium-Semester-1/content/presentation.log"
-  "/Volumes/HDD/Projects/PG-Colloquium-Semester-1/content/presentation.pdf"
   "presentation.log"
+  "/Volumes/HDD/Projects/PG-Colloquium-Semester-1/content/presentation.pdf"
