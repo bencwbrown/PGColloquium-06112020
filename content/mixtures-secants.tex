@@ -1,0 +1,50 @@
+\section{Mixture Models \& Secant Varieties}
+
+\begin{frame}{Hidden Variables}
+    \begin{itemize}
+    \item Suppose $\mc{P} \subset \Delta_{r-1}$ is a model for a random variable $X$ with state space $[r]$.
+    \item Moreover, assume that there is a \emph{hidden} or \emph{latent} random variable $Y$ with state space $[s]$, and for each $j \in [s]$, the conditional distribution of $X$ given $Y = j$ is $p^{(j)} \in \mc{P}$. 
+    \item The hidden variable $Y$ also has some probability distribution $\pi \in \Delta_{s-1}$.
+    \end{itemize}
+
+    So the joint distribution of $Y$ and $X$ is given by the formula
+    $$ P(Y = j; X = i) = \pi_{j} \cdot p_{i}^{(j)}. $$
+
+\end{frame}
+
+\begin{frame}{Mixture Models}
+
+    \begin{itemize}
+    \item But as $Y$ is hidden, we can only observe the marginal distribution of $X$, that is
+    $$ P(X = i) = \sum_{j = 1}^{s} \pi_{j} \cdot p_{i}^{(j)}. $$
+
+    \item In other words, the marginal distribution of $X$ is the convex combination of the $s$ distributions $p^{(1)}, \ldots, p^{(s)}$, with weights given by $\pi$.
+    \end{itemize}
+
+    \begin{block}{Definition}
+        Let $\mc{P} \subset \Delta_{r-1}$ be a statistical model. The \emph{$s$-th mixture model} is
+        $$ \Mixt^{s}(\mc{P}) := \Bigg\{ \sum_{j = 1}^{s} \pi_{j}\cdot p^{(j)} : \pi \in \Delta_{s-1},\ p^{(j)} \in \mc{P}, \text{ for all } j \Bigg\}. $$
+    \end{block}
+
+\end{frame}
+
+\begin{frame}{Mixture Models}
+
+    \begin{itemize}
+    \item Mixture models provide ways to build complex models out of simpler ones.
+
+    \item Basic assumption is that the underlying population to be modelled can be split into $s$ disjoint sub-populations.
+
+    \item Restricted to each sub-population, the observable $X$ follows a probability distribution from the simple model $\mc{P}$.
+
+    \item After marginalisation though, the structure becomes significantly more complex as it is now a convex combination of these simple distributions.
+
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}{}
+
+    LOOK AT 'ALGEBRAIC STATISTICS FOR COMPUTATIONAL BIOLOGY' - CHAPTER 14.
+
+\end{frame}

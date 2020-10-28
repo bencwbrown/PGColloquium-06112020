@@ -41,20 +41,40 @@
 \end{frame}
 
 \begin{frame}{Manifold of Independence}
-    
-    Let $\Delta \subset \RR^{4}$ be the tetrahedron with vertices given by the four basis vectors, $A_{i} = e_{i}$, and let a general point $p = (p_{ij})$ inside of $\Delta$ be represented by
 
-\begin{center}
+    \begin{itemize}
+        \item Let $\Delta \subset \RR^{4}$ be the tetrahedron with vertices given by the four basis vectors, $A_{i} = e_{i}$, and let a general point $p = (p_{ij})$ inside of $\Delta$ be represented by
+            \begin{center}
+        \begin{table}[]
+        $p_{ij} = (p_{11}, p_{12}, p_{21}, p_{22}) =$ 
+        \begin{tabular}{|l|l|}
+        \hline
+        $p_{11}$ & $p_{12}$ \\ \hline
+        $p_{21}$ & $p_{22}$ \\ \hline
+        \end{tabular}
+        \end{table}
+        \end{center}
+
+        \item Fienberg and Gilbert have shown that the two rulings are given by
+    \begin{center}
     \begin{table}[]
-    $p_{ij} = (p_{11}, p_{12}, p_{21}, p_{22}) =$ 
-    \begin{tabular}{|l|l|}
+    \begin{tabular}{|c|c|}
     \hline
-    $p_{11}$ & $p_{12}$ \\ \hline
-    $p_{21}$ & $p_{22}$ \\ \hline
+    $st$ & $s(1-t)$ \\ \hline
+    $t(1-s)$ & $(1-s)(1-t)$ \\ \hline
     \end{tabular}
+    $\quad (0 \leq s,t \leq 1),$
     \end{table}
-\end{center}
+    \end{center}
+    
+    which is a hyperbolic paraboloid inside of $\Delta$.
+    
+    \item They call this the \emph{manifold of independence}; any point on this surface has independent row and column marginal totals.
 
-Fienberg and Gilbert have shown that the rulings are given by $(st, s(1-t), t(1-s), (1-s)(1-t))$,
+    \end{itemize}
+    
+\end{frame}
 
+\begin{frame}
+    TODO: FIGURE.
 \end{frame}
