@@ -55,31 +55,46 @@
         \emph{Segre varieties} come from $\sigma: \PP^{n} \times \PP^{m} \ra \PP^{(n+1)(m+1) - 1}$, that sends $([X],[Y])$ to the pairwise products of their components:
             $$ \sigma : ([X_{1}, \ldots, X_{n+1}], [Y_{1}, \ldots, Y_{m+1}]) \mapsto [\ldots, X_{i}Y_{j}, \ldots ]. $$
 
-        \begin{block}{Example - the Segre quadric surface}
+        \begin{block}{Example (Segre quadric surface)}
         \vspace{-24pt}
         $$\sigma : \PP^{1} \times \PP^{1} \ra \PP^{3},\ ([X_{1}, X_{2}], [Y_{1}, Y_{2}]) \mapsto [ X_{1}Y_{1}, X_{1}Y_{2}, X_{2}Y_{1}, X_{2}Y_{2} ]. $$
         
-        If we set $[ X_{1}Y_{1}, X_{1}Y_{2}, X_{2}Y_{1}, X_{2}Y_{2} ] =: [p_{11}, p_{12}, p_{21}, p_{22}]$, then:
+        Set $[ X_{1}Y_{1}, X_{1}Y_{2}, X_{2}Y_{1}, X_{2}Y_{2} ] =: [p_{11}, p_{12}, p_{21}, p_{22}]$, then:
         $$ \rightsquigarrow \det \begin{pmatrix} p_{11} & p_{12} \\ p_{21} & p_{22} \end{pmatrix} = 0 \iff \rank \begin{pmatrix} p_{11} & p_{12} \\ p_{21} & p_{22} \end{pmatrix} \leq 1. $$
         \end{block}
 \end{frame}
 
 \begin{frame}
     \begin{block}{Rulings}
-    The Segre quadric surface has two families of lines in it, called \emph{rulings}. They are the images of $\sigma(\PP^{1} \times \{ \text{pt} \} )$ and $\sigma( \{ \text{pt} \} \times \PP^{1})$.
+    The Segre quadric surface has two families of lines in it, called \emph{rulings}. These are the images of $\sigma(\PP^{1} \times \{ \text{pt} \} )$ and $\sigma( \{ \text{pt} \} \times \PP^{1})$.
     \end{block}
 
-    \begin{center}
-        \includegraphics[height=0.35\textwidth]{resources/tractricious.jpg}
-    \end{center}
+    \begin{figure}[!htb]
+    \centering
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[height=0.5\textheight]{resources/shukhov-1.jpg}
+        \caption{\emph{Shukhov Tower}, Nizhny Novgorod}
+    \end{minipage}%
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[height=0.5\textheight]{resources/shukhov-2.jpg}
+        \caption{\emph{Shukhov Tower}, Moscow}
+    \end{minipage}%
+    \begin{minipage}{.3\textwidth}
+        \centering
+        \includegraphics[height=0.5\textheight]{resources/tractricious.jpg}
+        \caption{\emph{Tractricious}, Fermilab}
+    \end{minipage}
+    \end{figure}
 
 \end{frame}
 
 \begin{frame}{Manifold of Independence}
 
     \begin{itemize}
-        \item Let $\Delta_{3} \subset \RR^{4}$, with vertices $A_{i} = e_{i}$. Denote a general point $p = (p_{ij}) \in \Delta_{3}$ by
-        
+        \item Let $\Delta_{3} \subset \RR^{4}$, with vertices $A_{i} = e_{i}$, and let $p = (p_{ij}) \in \Delta_{3}$ be
+        \vspace{-6pt}
         \begin{center}
         \begin{table}[]
         $p_{ij} = (p_{11}, p_{12}, p_{21}, p_{22}) =$ 
@@ -91,7 +106,8 @@
         \end{table}
         \end{center}
 
-    \item Fienberg & Gilbert have shown that the two rulings are given by
+    \item Has been shown that the two rulings are given by
+    
     \begin{center}
     \begin{table}[]
     \begin{tabular}{|c|c|}
@@ -105,12 +121,16 @@
     
     \end{itemize}
 
-    \begin{center}
-        \includegraphics[height=0.25\textwidth]{resources/tetrahedron.pdf}
-    \end{center}
+    \begin{figure}[!htb]
+    \centering
+    \begin{minipage}{.5\textwidth}
+        \centering
+        \includegraphics[height=0.35\textheight]{resources/tetrahedron.pdf}
+    \end{minipage}%
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[height=0.40\textheight]{resources/independence-surface.pdf}
+    \end{minipage}
+    \end{figure}
     
-\end{frame}
-
-\begin{frame}
-    TODO: FIGURE.
 \end{frame}

@@ -63,13 +63,11 @@
     \begin{itemize}
         \item Sequence of DNA molecules in a genome is represented as a sequence of letters from the four letter alphabet $\Sigma = \{ \texttt{A}, \texttt{C}, \texttt{G}, \texttt{T} \}$.
 
-        \item At a particular site of the genome, any of the four nucleotides $\texttt{X} \in \Sigma$, say, might be observed.
+        \item At a particular site of the genome, any of the four nucleotides, $\texttt{X} \in \Sigma$ say, might be observed.
 
-        \item Based on a particular ancestral nucleotide of $\texttt{X}$, might expect evolution to occur in a way that the state of the current nucleotide is independent of one another:
+        \item Evolution of ancestral nucleotide $\texttt{Y}$ to observed $\texttt{X}$. Suppose the observation of which $\texttt{X} = \texttt{A}, \texttt{C}, \texttt{G}, \texttt{T}$, is independent.
 
-        $$ \texttt{A} \mapsto \texttt{X},\ \texttt{C} \mapsto \texttt{X},\ \texttt{G} \mapsto \texttt{X}, \text{ or } \texttt{T} \mapsto \texttt{X}. $$
-
-        \item So for each ancestral nucleotide, we have an independence model; its distribution is determined by a point of $\Delta_{3} = \Delta_{4-1}$.
+        \item For each ancestral nucleotide $\texttt{Y}$, we have an independence model; its distribution is determined by a point of $\Delta_{3} = \Delta_{4-1}$:
 
     \end{itemize}
 
@@ -77,7 +75,7 @@
 
 \begin{frame}{Example}
     \begin{itemize}
-        \item  $X$ is a hidden variable though; could have been any one of $\texttt{A}, \texttt{C}, \texttt{G}$, or $\texttt{T}$.
+        \item  $\texttt{Y}$ is a hidden variable though; could have been any one of $\texttt{A}, \texttt{C}, \texttt{G}$, or $\texttt{T}$.
 
         \item For \emph{exactly one choice} of $X$, we had the distribution $\Delta_{3}$; need to consider \emph{all choices} of ancestral nucleotide.
 
