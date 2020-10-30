@@ -55,9 +55,9 @@
         \emph{Segre varieties} come from $\sigma: \PP^{n} \times \PP^{m} \ra \PP^{(n+1)(m+1) - 1}$, that sends $([X],[Y])$ to the pairwise products of their components:
             $$ \sigma : ([X_{1}, \ldots, X_{n+1}], [Y_{1}, \ldots, Y_{m+1}]) \mapsto [\ldots, X_{i}Y_{j}, \ldots ]. $$
 
-        \begin{block}{Example - the Segre quadric}
-        %\vspace{-24pt}
-        $\sigma : \PP^{1} \times \PP^{1} \ra \PP^{3},\ ([X_{1}, X_{2}], [Y_{1}, Y_{2}]) \mapsto [ X_{1}Y_{1}, X_{1}Y_{2}, X_{2}Y_{1}, X_{2}Y_{2} ]. $
+        \begin{block}{Example - the Segre quadric surface}
+        \vspace{-24pt}
+        $$\sigma : \PP^{1} \times \PP^{1} \ra \PP^{3},\ ([X_{1}, X_{2}], [Y_{1}, Y_{2}]) \mapsto [ X_{1}Y_{1}, X_{1}Y_{2}, X_{2}Y_{1}, X_{2}Y_{2} ]. $$
         
         If we set $[ X_{1}Y_{1}, X_{1}Y_{2}, X_{2}Y_{1}, X_{2}Y_{2} ] =: [p_{11}, p_{12}, p_{21}, p_{22}]$, then:
         $$ \rightsquigarrow \det \begin{pmatrix} p_{11} & p_{12} \\ p_{21} & p_{22} \end{pmatrix} = 0 \iff \rank \begin{pmatrix} p_{11} & p_{12} \\ p_{21} & p_{22} \end{pmatrix} \leq 1. $$
@@ -66,18 +66,21 @@
 
 \begin{frame}
     \begin{block}{Rulings}
-    $\sigma(\PP^{1} \times \PP^{1}) = \{ [p_{11}, p_{12}; p_{21}, p_{22}] : \det (p_{ij}) = 0 \} $ is an example of a \emph{determinantal variety}.
-    
-    This example has two families of lines inside of it; the images of $\sigma( [p_{11}, p_{12}] \times \{ Q \} )$ and $\sigma( \{ Q \} \times [p_{21}, p_{22}])$, which are called \emph{rulings of the surface}.
+    The Segre quadric surface has two families of lines in it, called \emph{rulings}. They are the images of $\sigma(\PP^{1} \times \{ \text{pt} \} )$ and $\sigma( \{ \text{pt} \} \times \PP^{1})$.
     \end{block}
+
+    \begin{center}
+        \includegraphics[height=0.35\textwidth]{resources/tractricious.jpg}
+    \end{center}
 
 \end{frame}
 
 \begin{frame}{Manifold of Independence}
 
     \begin{itemize}
-        \item Let $\Delta \subset \RR^{4}$ be the tetrahedron with vertices given by the four basis vectors, $A_{i} = e_{i}$, and let a general point $p = (p_{ij})$ inside of $\Delta$ be represented by
-            \begin{center}
+        \item Let $\Delta_{3} \subset \RR^{4}$, with vertices $A_{i} = e_{i}$. Denote a general point $p = (p_{ij}) \in \Delta_{3}$ by
+        
+        \begin{center}
         \begin{table}[]
         $p_{ij} = (p_{11}, p_{12}, p_{21}, p_{22}) =$ 
         \begin{tabular}{|l|l|}
@@ -88,7 +91,7 @@
         \end{table}
         \end{center}
 
-        \item Fienberg and Gilbert have shown that the two rulings are given by
+    \item Fienberg & Gilbert have shown that the two rulings are given by
     \begin{center}
     \begin{table}[]
     \begin{tabular}{|c|c|}
@@ -96,15 +99,15 @@
     $st$ & $s(1-t)$ \\ \hline
     $t(1-s)$ & $(1-s)(1-t)$ \\ \hline
     \end{tabular}
-    $\quad (0 \leq s,t \leq 1),$
+    $\quad (0 \leq s,t \leq 1).$
     \end{table}
     \end{center}
     
-    which is a hyperbolic paraboloid inside of $\Delta$.
-    
-    \item They call this the \emph{manifold of independence}; any point on this surface has independent row and column marginal totals.
-
     \end{itemize}
+
+    \begin{center}
+        \includegraphics[height=0.25\textwidth]{resources/tetrahedron.pdf}
+    \end{center}
     
 \end{frame}
 
