@@ -23,7 +23,7 @@
 
     \begin{block}{Definition}
         Let $\mc{P} \subset \Delta_{r-1}$ be a statistical model. The \emph{$s$-th mixture model} is
-        $$ \Mixt^{s}(\mc{P}) := \Bigg\{ \sum_{j = 1}^{s} \pi_{j}\cdot p^{(j)} : \pi \in \Delta_{s-1},\ p^{(j)} \in \mc{P}, \text{ for all } j \Bigg\}. $$
+        $$ \Mixt^{s}(\mc{P}) := \Set{ \sum_{j = 1}^{s} \pi_{j}\cdot p^{(j)} | \pi \in \Delta_{s-1},\ p^{(j)} \in \mc{P}, \text{ for all } j }. $$
     \end{block}
 
 \end{frame}
@@ -63,11 +63,13 @@
     \begin{itemize}
         \item Sequence of DNA molecules in a genome is represented as a sequence of letters from the four letter alphabet $\Sigma = \{ \texttt{A}, \texttt{C}, \texttt{G}, \texttt{T} \}$.
 
-        \item At a particular site of the genome, any of the four nucleotides, $\texttt{X} \in \Sigma$ say, might be observed.
+        \item \emph{Fix for now} an ancestral nucleotide $\texttt{Y} \in \Sigma$; we assume that the following evolution events occur independently:
 
-        \item Evolution of ancestral nucleotide $\texttt{Y}$ to observed $\texttt{X}$. Suppose the observation of which $\texttt{X} = \texttt{A}, \texttt{C}, \texttt{G}, \texttt{T}$, is independent.
+        $$ \texttt{Y} \overset{ \pi_{\texttt{Y}} \cdot p_{\texttt{A}}^{(\texttt{Y})}  }{\longmapsto}  \texttt{A}, \quad \texttt{Y} \overset{ \pi_{\texttt{Y}} \cdot p_{\texttt{C}}^{(\texttt{Y})}  }{\longmapsto} \texttt{C}, \quad \texttt{Y} \overset{ \pi_{\texttt{Y}} \cdot p_{\texttt{G}}^{(\texttt{Y})}  }{\longmapsto} \texttt{G}, \quad \texttt{Y} \overset{ \pi_{\texttt{Y}} \cdot p_{\texttt{T}}^{(\texttt{Y})}  }{\longmapsto} \texttt{T}, $$ 
 
-        \item For each ancestral nucleotide $\texttt{Y}$, we have an independence model; its distribution is determined by a point of $\Delta_{3} = \Delta_{4-1}$:
+        \item So \emph{given} $\texttt{Y}$, we have a joint distribution:
+        
+        $$ \pi_{\texttt{Y}} \cdot [ p_{\texttt{A}}^{(\texttt{Y})}, p_{\texttt{C}}^{(\texttt{Y})}, p_{\texttt{G}}^{(\texttt{Y})}, p_{\texttt{T}}^{(\texttt{Y})} ] \in \Delta_{3} = \Delta_{4-1}. $$
 
     \end{itemize}
 
@@ -77,20 +79,29 @@
     \begin{itemize}
         \item  $\texttt{Y}$ is a hidden variable though; could have been any one of $\texttt{A}, \texttt{C}, \texttt{G}$, or $\texttt{T}$.
 
-        \item For \emph{exactly one choice} of $X$, we had the distribution $\Delta_{3}$; need to consider \emph{all choices} of ancestral nucleotide.
+        \item For \emph{exactly one given choice} of \texttt{Y}, we had the distribution $\Delta_{3}$; need to consider \emph{all choices} of ancestral nucleotide \texttt{Y}.
 
-        \item Hence we get the mixture model: $\Mixt^{4}(\Delta_{3}) =$
+        \item Hence we get the mixture model:
 
-        $$\Bigg\{ \sum_{i = 1}^{4} \Prob(X = i)\cdot \lambda_{i}  :\ i \in \Sigma,\ \lambda_{i} \in [0,1],\ \lambda_{1} + \ldots + \lambda_{4} = 1 \Bigg\}. $$
+        \begin{equation*}
+            \begin{split}
+                &\Mixt^{4}(\Delta_{3}) \\
+                &= \Set{\sum_{ \texttt{Y} \in \{ \texttt{A}, \texttt{C}, \texttt{G}, \texttt{T} \}  } \pi_{\texttt{Y}} \cdot p^{(\texttt{Y})} | \pi \in \Delta_{3},\ p^{(\texttt{Y})} \in \mc{P} \subseteq \Delta_{3}, \text{ for each \texttt{Y}} }.
+            \end{split}
+        \end{equation*}
 
-        \item \textbf{Q?}: What is the analogue for mixture models in algebraic statistics?
     \end{itemize}
+
+    \begin{block}{Question?}
+    What is the analogue for mixture models in algebraic statistics?
+    \end{block}
+
 \end{frame}
 
 \begin{frame}{Secant Varieties}
-    \begin{itemize}
-        \item \textbf{A!}: Secant\footnote{from \emph{secare}, ``to cut'' in Latin; \emph{c.f. tangō}, ``to touch''.} varieties!
-    \end{itemize}
+    \begin{block}{Answer!}
+        Secant\footnote{from \emph{secare}, ``to cut'' in Latin; \emph{c.f. tangō}, ``to touch''.} varieties!
+    \end{block}
 
     \begin{block}{Definitions}
         \begin{itemize}

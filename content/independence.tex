@@ -75,7 +75,7 @@ $ \ \overset{X \indep Y}{\longleadsto{1.25}} \ p_{11}p_{22} = p_{12}p_{21}. $
     $$ P( X^{(k)} = i; Y^{(k)} = j ) = p_{ij}, \quad \text{for all } i \in [r],\ j \in [c],\ k \in [n]. $$
 
     Joint probability matrix $p = (p_{ij})$ is an \emph{unknown} element of the $(rc-1)$-dimensional \emph{probability simplex},
-    $$ \Delta_{rc-1} = \bigg\{ q \in \RR^{r\times c} :\ q_{ij} \geq 0, \text{ for all } i,j, \text{ and } \sum_{i = 1}^{r}\sum_{j = 1}^{c} q_{ij} = 1 \bigg\}. $$
+    $$ \Delta_{rc-1} = \Set{ q \in \RR^{r\times c} | q_{ij} \geq 0, \text{ for all } i,j, \text{ and } \sum_{i = 1}^{r}\sum_{j = 1}^{c} q_{ij} = 1 }. $$
 \end{frame}
 
 \begin{frame}
@@ -84,7 +84,7 @@ $ \ \overset{X \indep Y}{\longleadsto{1.25}} \ p_{11}p_{22} = p_{12}p_{21}. $
         A \emph{statistical model} $\mc{M}$ is a subset of $\Delta_{rc-1}$. It represents the set of all candidates for the unknown distribution $p$.
         \vspace*{12pt}
         The \emph{independence model} for $X$ and $Y$ is the set
-        $$ \mc{M}_{X \indep Y} := \{ p \in \Delta_{rc - 1} : \rank(p) = 1 \}. $$
+        $$ \mc{M}_{X \indep Y} := \Set{ p \in \Delta_{rc - 1} | \rank(p) = 1 }. $$
     \end{block}
 
     $\mc{M}_{X \indep Y}$ is the intersection of $\Delta_{rc-1}$ and the set of all matrices $p = (p_{ij})$ such that
