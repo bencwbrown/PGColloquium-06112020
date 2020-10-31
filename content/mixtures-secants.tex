@@ -1,14 +1,19 @@
 \section{Mixture Models \& Secant Varieties}
 
-\begin{frame}{Hidden Variables}
+\begin{frame}{Hidden Variables Omake
+r: Known Unknowns}
     \begin{itemize}
     \item Suppose $\mc{P} \subset \Delta_{r-1}$ is a model for a random variable $X$ with state space $[r]$.
-    \item Moreover, assume that there is a \emph{hidden} or \emph{latent} random variable $Y$ with state space $[s]$, and for each $j \in [s]$, the conditional distribution of $X$ given $Y = j$ is $p^{(j)} \in \mc{P}$. 
-    \item The hidden variable $Y$ also has some probability distribution $\pi \in \Delta_{s-1}$.
+    \item Assume $Y$ is a \emph{hidden} or \emph{latent} random variable, with state space $[s]$; for each $j \in [s]$, the conditional distribution of $X$ given $Y = j$ is $p^{(j)} \in \mc{P}$. 
+    \item $Y$ also has some probability distribution $\pi \in \Delta_{s-1}$.
     \end{itemize}
 
     So the joint distribution of $Y$ and $X$ is given by the formula
     $$ P(Y = j; X = i) = \pi_{j} \cdot p_{i}^{(j)}. $$
+
+    \begin{block}{Donald Rumsfeld, 2002}
+        \emph{``[T]here are known knowns; there are things we know we know. We also know there are known unknowns; that is to say we know there are some things we do not know.''}
+    \end{block}
 
 \end{frame}
 
@@ -17,11 +22,10 @@
     \begin{itemize}
     \item But as $Y$ is hidden, we can only observe the marginal distribution of $X$, that is
     $$ P(X = i) = \sum_{j = 1}^{s} \pi_{j} \cdot p_{i}^{(j)}. $$
-
     \item In other words, the marginal distribution of $X$ is the convex combination of the $s$ distributions $p^{(1)}, \ldots, p^{(s)}$, with weights given by $\pi$.
     \end{itemize}
 
-    \begin{block}{Definition}
+    \begin{block}{Definition \cite{BSSSMD2009}}
         Let $\mc{P} \subset \Delta_{r-1}$ be a statistical model. The \emph{$s$-th mixture model} is
         $$ \Mixt^{s}(\mc{P}) := \Set{ \sum_{j = 1}^{s} \pi_{j}\cdot p^{(j)} | \pi \in \Delta_{s-1},\ p^{(j)} \in \mc{P}, \text{ for all } j }. $$
     \end{block}
@@ -47,12 +51,10 @@
 
     \begin{itemize}
         \item Introduce \emph{phylogenetic trees}; describe the descent of species from a common ancestor:        
-        \begin{block}{Example Cartoon}
 
         \begin{center}
-        \includegraphics[width=0.5\textwidth, angle=0]{resources/phylogenetic-tree.pdf}
+        \includegraphics[height=0.75\textheight]{resources/phylogenetic-tree.pdf}
         \end{center}
-        \end{block}
 
     \end{itemize}
 
@@ -63,7 +65,7 @@
     \begin{itemize}
         \item Sequence of DNA molecules in a genome is represented as a sequence of letters from the four letter alphabet $\Sigma = \{ \texttt{A}, \texttt{C}, \texttt{G}, \texttt{T} \}$.
 
-        \item \emph{Fix for now} an ancestral nucleotide $\texttt{Y} \in \Sigma$; we assume that the following evolution events occur independently:
+        \item \emph{Fix for now} an ancestral nucleotide $\texttt{Y} \in \Sigma$; we assume that the following evolution events occur independently \cite{EAsalmon}:
 
         $$ \texttt{Y} \overset{ \pi_{\texttt{Y}} \cdot p_{\texttt{A}}^{(\texttt{Y})}  }{\longmapsto}  \texttt{A}, \quad \texttt{Y} \overset{ \pi_{\texttt{Y}} \cdot p_{\texttt{C}}^{(\texttt{Y})}  }{\longmapsto} \texttt{C}, \quad \texttt{Y} \overset{ \pi_{\texttt{Y}} \cdot p_{\texttt{G}}^{(\texttt{Y})}  }{\longmapsto} \texttt{G}, \quad \texttt{Y} \overset{ \pi_{\texttt{Y}} \cdot p_{\texttt{T}}^{(\texttt{Y})}  }{\longmapsto} \texttt{T}, $$ 
 
@@ -77,16 +79,16 @@
 
 \begin{frame}{Example}
     \begin{itemize}
-        \item  $\texttt{Y}$ is a hidden variable though; could have been any one of $\texttt{A}, \texttt{C}, \texttt{G}$, or $\texttt{T}$.
+        \item  $\texttt{Y}$ is a hidden variable though; could have been anything from $\Sigma = \Set{\texttt{A}, \texttt{C}, \texttt{G}, \texttt{T}}$.
 
         \item For \emph{exactly one given choice} of \texttt{Y}, we had the distribution $\Delta_{3}$; need to consider \emph{all choices} of ancestral nucleotide \texttt{Y}.
 
-        \item Hence we get the mixture model:
-
+        \item Hence we get the mixture model \cite{EAsalmon}:
+            \vspace*{-8pt}
         \begin{equation*}
             \begin{split}
                 &\Mixt^{4}(\Delta_{3}) \\
-                &= \Set{\sum_{ \texttt{Y} \in \{ \texttt{A}, \texttt{C}, \texttt{G}, \texttt{T} \}  } \pi_{\texttt{Y}} \cdot p^{(\texttt{Y})} | \pi \in \Delta_{3},\ p^{(\texttt{Y})} \in \mc{P} \subseteq \Delta_{3}, \text{ for each \texttt{Y}} }.
+                &= \Set{\sum_{ \texttt{Y} \in \Sigma  } \pi_{\texttt{Y}} \cdot p^{(\texttt{Y})} | \pi \in \Delta_{3},\ p^{(\texttt{Y})} \in \mc{P} \subseteq \Delta_{3}, \text{ for each \texttt{Y}} }.
             \end{split}
         \end{equation*}
 
@@ -136,7 +138,7 @@
         \includegraphics[width=0.6\textwidth, angle=0]{resources/three-extant.pdf}
     \end{center}
 
-    \item Now we have to consider: $\Sec^{4}(\PP^{3} \times \PP^{3} \times \PP^{3})$; or equivalently $\Mixt^{4}(\Delta_{3} \times \Delta_{3} \times \Delta_{3})$.
+    \item Now we have to consider: $\Sec^{4}(\PP^{3} \times \PP^{3} \times \PP^{3})$; or equivalently $\Mixt^{4}(\Delta_{3} \times \Delta_{3} \times \Delta_{3})$ \cite{EAsalmon}.
 
     \item Finding the minimal set of polynomials defining $\Sec^{4}(\PP^{3} \times \PP^{3} \times \PP^{3})$ once gave rise to a very important application of algebraic statistics...
 
@@ -147,15 +149,17 @@
 \begin{frame}{The \emph{Salmon Problem}}
 
 \begin{block}{Statement}
-    \emph{Determine the ideal\footnote{read this as ``set of defining polynomials''.} defining $\Sec^{4}(\PP^{3} \times \PP^{3} \times \PP^{3})$.}
+    \emph{Determine the ideal\footnote{read this as ``set of defining polynomials''.} defining $\Sec^{4}(\PP^{3} \times \PP^{3} \times \PP^{3})$,} \cite{EAsalmon}.
 \end{block}
 
 \begin{block}{Prize}
     \begin{itemize}
-    \item At an IMA workshop in 2007, Elizabeth Allman stated that she would personally catch and smoke copper river salmon from Alaska for whomever solved this problem. 
+    \item At an IMA workshop in 2007, Elizabeth Allman stated that she would personally catch and smoke copper river salmon from Alaska for whomever solved this problem.
     \item Solved in 2010 by Shmuel Friedland \& Elizabeth Gross \cite{SFEG2012} (see \cite{DBLO2011} too for an in-depth discussion).
     \end{itemize}
 \end{block}
+
+Solving this would then provide all polynomial invariants of the statistical model for any binary evolutionary tree, with any number of states \cite{EAJR2008, DBLO2011}.
 
 \end{frame}
 

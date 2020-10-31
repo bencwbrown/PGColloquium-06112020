@@ -16,31 +16,92 @@
     \end{block}
 \end{frame}
 
-\begin{frame}{Two-by-Two Contingency Tables}
+\begin{frame}{\emph{``Does Watching Football on TV Cause Hair Loss?''}}
     
-    A contingency table contains counts obtained by cross-classifying observed cases according to two or more discrete criteria.
+    In a fictional study, 296 British subjects between the ages of 40 -- 50 were asked about their hair loss and how much football they watch on television.
+        
+    \begin{block}{$3 \times 3$ Contingency Table}
 
-    \begin{block}{Example}
-        TODO: Figure (Florida death sentences)
+    We can represent the responses in a $3\times 3$ \emph{contingency table}:
+
+    \begin{table}[h]
+        \begin{tabular}{@{}lcccc@{}} 
+        & &  \multicolumn{3}{c}{Hair Amount}\\\cmidrule{3-5} 
+        TV Time & & lots & medium & balding\\ \midrule 
+        $\geq 2$h & & 51 & 45 & 33 \\ 
+        $2-6$ h & & 28 & 30 & 29 \\ 
+        $\geq 6$h & & 15 & 27 & 38\\\bottomrule
+        \end{tabular}
+    \end{table} 
     \end{block}
 
-    We ask whether the sentences were made independently of the defendant's race.
+    Based on the data, are these two random variables independent, or is there a correlation?
+
 \end{frame}
 
-\begin{frame}{Two-by-Two Contingency Tables}
+\begin{frame}{\emph{``Does Watching Football on TV Cause Hair Loss?''}}
+    $$ M = \begin{bmatrix} 
+    51 & 45 & 33 \\ 
+    28 & 30 & 29 \\ 
+    15 & 27 & 38
+    \end{bmatrix} $$
+
+    \begin{block}{Null Hypothesis}
+    \vspace*{-18pt}
+        \begin{equation*}
+            H_{0}: \qquad \text{\emph{Football on TV and Hair Loss are Independent.}}
+        \end{equation*}
+    \vspace*{-18pt}
+    \end{block}
+
+    \begin{itemize}
+        \item Independence means that the $(2 \times 2)$-minors of the data matrix $M$ should vanish, but in fact they are all strictly quite positive, suggesting a positive correlation!
+        \item For example, the top left $(2 \times 2)$-minor equals: $51 \cdot 30 - 45 \cdot 28 = 1530 - 1260 = 270 \neq 0$.
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}{\emph{``Does Watching Football on TV Cause Hair Loss?''}}
+
+    \begin{itemize}
+        \item A better explanation for our data is obtained by identifying a certain \emph{hidden variable}, which is the \emph{gender identification} of the respondents:
+    \end{itemize}
+
+    $$ M  = M_{m} + M_{f} = 
+    \underbrace{\begin{bmatrix} 
+    3 & 9 & 15 \\ 
+    4 & 12 & 20 \\ 
+    7 & 21 & 35
+    \end{bmatrix}}_{126 \text{ male}} + 
+    \underbrace{\begin{bmatrix} 
+    48 & 36 & 18 \\
+    24 & 18 & 9 \\
+    8 & 6 & 3
+    \end{bmatrix}}_{170 \text{ female}}.  $$
+
+    \begin{block}{Alternative Hypothesis}
+        Instead, we have \emph{conditional independence}:
+        \begin{equation*}
+            H_{0}: \text{ \emph{Football on TV \& Hair Loss are Independent} given \emph{Gender.}}
+        \end{equation*}
+    \end{block}
+
+\end{frame}
+
+\begin{frame}{Contingency Tables}
     
     \begin{itemize}
-        \item Classify using two criteria with $r$ and $c$ levels, yields two random variables $X$ and $Y$. 
-        \item Code outcomes as $[r] := \{1,\ldots, r\}$, and $[c] := \{ 1, \ldots, c \}$.
+        \item Classify using two criteria with $r$ and $c$ levels, yielding two random variables $X$ and $Y$. 
+        \item Note outcomes as $[r] := \{1,\ldots, r\}$, and $[c] := \{ 1, \ldots, c \}$.
     \end{itemize}
     
-    All information about $X$ and $Y$ is contained in the \emph{joint probabilities}
+    All information about $X$ and $Y$ is contained in the \emph{joint probabilities}:
     $$ p_{ij} = P(X = i; Y = j), \quad i \in [r],\ j \in [c]. $$
 
     \begin{itemize}
         \item These in turn determine the \emph{marginal probabilities}:
     \end{itemize}
-
+    \vspace*{-12pt}
     \begin{equation*}
         \begin{split}
             p_{i+} &:= \sum_{j = 1}^{c} p_{ij} = P(X = i), \quad i \in [r], \\
@@ -52,11 +113,13 @@
 
 \begin{frame}
     \begin{block}{Definition}
-        Two random variables $X$ and $Y$ are \emph{independent} if the joint probabilities factor as $p_{ij} = p_{i+}\cdot p_{+j}$, for all $i \in [r]$ and $j \in [c]$. Denote independence of $X$ and $Y$ by $X \indep Y$.
+        Two random variables $X$ and $Y$ are \emph{independent} if the joint probabilities factor as $p_{ij} = p_{i+}\cdot p_{+j}$, for all $i \in [r]$ and $j \in [c]$. 
+        \\
+        Denote independence of $X$ and $Y$ by $X \indep Y$.
     \end{block}
 
     \begin{block}{Proposition}
-        Two random variables $X$ and $Y$ are independent if and only if the $(r \times c)$-matrix, $p = (p_{ij})$, has rank one.
+        \emph{Two random variables $X$ and $Y$ are independent if and only if the $(r \times c)$-matrix, $p = (p_{ij})$, has rank one.}
     \end{block}
 
     For a $(2 \times 2)$-table, we thus have:
@@ -71,22 +134,25 @@ $ \ \overset{X \indep Y}{\longleadsto{1.25}} \ p_{11}p_{22} = p_{12}p_{21}. $
 \end{center}
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Finally Some Geometry}
 
     Suppose now we select $n$ cases, giving rise to $n$ independent pairs of discrete random variables:
     $$ \begin{pmatrix} X^{(1)} \\ Y^{(1)} \end{pmatrix}, \begin{pmatrix} X^{(2)} \\ Y^{(2)} \end{pmatrix}, \ldots, \begin{pmatrix} X^{(n)} \\ Y^{(n)} \end{pmatrix}, $$
     all drawn from the same distribution, i.e.:
     $$ P( X^{(k)} = i; Y^{(k)} = j ) = p_{ij}, \quad \text{for all } i \in [r],\ j \in [c],\ k \in [n]. $$
 
-    Joint probability matrix $p = (p_{ij})$ is an \emph{unknown} element of the $(rc-1)$-dimensional \emph{probability simplex},
+    \begin{block}{Probability Simplices}
+    Joint probability matrix $p = (p_{ij})$ is an \emph{unknown} element of the $(rc-1)$-dimensional \emph{probability simplex}:
     $$ \Delta_{rc-1} = \Set{ q \in \RR^{r\times c} | q_{ij} \geq 0, \text{ for all } i,j, \text{ and } \sum_{i = 1}^{r}\sum_{j = 1}^{c} q_{ij} = 1 }. $$
+    \end{block}
+
 \end{frame}
 
 \begin{frame}
 
     \begin{block}{Definitions}
         A \emph{statistical model} $\mc{M}$ is a subset of $\Delta_{rc-1}$. It represents the set of all candidates for the unknown distribution $p$.
-        \vspace*{12pt}
+
         The \emph{independence model} for $X$ and $Y$ is the set
         $$ \mc{M}_{X \indep Y} := \Set{ p \in \Delta_{rc - 1} | \rank(p) = 1 }. $$
     \end{block}
