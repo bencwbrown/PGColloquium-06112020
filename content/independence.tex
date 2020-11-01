@@ -1,89 +1,14 @@
 \section{Independence Models}
 
 \begin{frame}{Statistical Models}
-    \begin{block}{planetmath.org}
-    A \emph{statistical model} is usually parameterised by a function, called a \emph{parametrisation}
+    \begin{block}{Definition, \cite{}}
+    A \emph{statistical model} $\mc{P}$ is the collection of probability distributions, usually parameterised by a function  called a \emph{parametrisation}
     $$ \Theta \ra \mc{P}, \quad \text{given by} \quad \theta \mapsto P_{\theta},\quad \text{so that}\quad \mc{P} = \{ P_{\theta} : \theta \in \Theta \}, $$
     where $\Theta$ is the \emph{parameter space}. $\Theta$ is usually a subset of $\RR^{n}$.
     \end{block}
 
-    \begin{block}{McCullagh, 2002 \cite{PM2002}}
+    \begin{block}{McCullagh, 2002, \cite{PM2002}}
     This should be defined using category theory.
-    \end{block}
-
-    \begin{block}{Note on References}
-        General theory without particular references comes from either \cite{BSLP2005} or \cite{BSSSMD2009}.
-    \end{block}
-\end{frame}
-
-\begin{frame}{\emph{``Does Watching Football on TV Cause Hair Loss?''}}
-    
-    In a fictional study, 296 British subjects between the ages of 40 -- 50 were asked about their hair loss and how much football they watch on television.
-        
-    \begin{block}{$3 \times 3$ Contingency Table}
-
-    We can represent the responses in a $3\times 3$ \emph{contingency table}:
-
-    \begin{table}[h]
-        \begin{tabular}{@{}lcccc@{}} 
-        & &  \multicolumn{3}{c}{Hair Amount}\\\cmidrule{3-5} 
-        TV Time & & lots & medium & balding\\ \midrule 
-        $\geq 2$h & & 51 & 45 & 33 \\ 
-        $2-6$ h & & 28 & 30 & 29 \\ 
-        $\geq 6$h & & 15 & 27 & 38\\\bottomrule
-        \end{tabular}
-    \end{table} 
-    \end{block}
-
-    Based on the data, are these two random variables independent, or is there a correlation?
-
-\end{frame}
-
-\begin{frame}{\emph{``Does Watching Football on TV Cause Hair Loss?''}}
-    $$ M = \begin{bmatrix} 
-    51 & 45 & 33 \\ 
-    28 & 30 & 29 \\ 
-    15 & 27 & 38
-    \end{bmatrix} $$
-
-    \begin{block}{Null Hypothesis}
-    \vspace*{-18pt}
-        \begin{equation*}
-            H_{0}: \qquad \text{\emph{Football on TV and Hair Loss are Independent.}}
-        \end{equation*}
-    \vspace*{-18pt}
-    \end{block}
-
-    \begin{itemize}
-        \item Independence means that the $(2 \times 2)$-minors of the data matrix $M$ should vanish, but in fact they are all strictly quite positive, suggesting a positive correlation!
-        \item For example, the top left $(2 \times 2)$-minor equals: $51 \cdot 30 - 45 \cdot 28 = 1530 - 1260 = 270 \neq 0$.
-    \end{itemize}
-
-\end{frame}
-
-\begin{frame}{\emph{``Does Watching Football on TV Cause Hair Loss?''}}
-
-    \begin{itemize}
-        \item A better explanation for our data is obtained by identifying a certain \emph{hidden variable}, which is the \emph{gender identification} of the respondents:
-    \end{itemize}
-
-    $$ M  = M_{m} + M_{f} = 
-    \underbrace{\begin{bmatrix} 
-    3 & 9 & 15 \\ 
-    4 & 12 & 20 \\ 
-    7 & 21 & 35
-    \end{bmatrix}}_{126 \text{ male}} + 
-    \underbrace{\begin{bmatrix} 
-    48 & 36 & 18 \\
-    24 & 18 & 9 \\
-    8 & 6 & 3
-    \end{bmatrix}}_{170 \text{ female}}.  $$
-
-    \begin{block}{Alternative Hypothesis}
-        Instead, we have \emph{conditional independence}:
-        \begin{equation*}
-            H_{0}: \text{ \emph{Football on TV \& Hair Loss are Independent} given \emph{Gender.}}
-        \end{equation*}
     \end{block}
 
 \end{frame}
@@ -113,9 +38,10 @@
 
 \begin{frame}
     \begin{block}{Definition}
-        Two random variables $X$ and $Y$ are \emph{independent} if the joint probabilities factor as $p_{ij} = p_{i+}\cdot p_{+j}$, for all $i \in [r]$ and $j \in [c]$. 
-        \\
-        Denote independence of $X$ and $Y$ by $X \indep Y$.
+    \begin{itemize}
+        \item Two random variables $X$ and $Y$ are \emph{independent} if the joint probabilities factor as $p_{ij} = p_{i+}\cdot p_{+j}$, for all $i \in [r]$ and $j \in [c]$. 
+        \item Denote independence of $X$ and $Y$ by $X \indep Y$.
+    \end{itemize}
     \end{block}
 
     \begin{block}{Proposition}
@@ -151,10 +77,12 @@ $ \ \overset{X \indep Y}{\longleadsto{1.25}} \ p_{11}p_{22} = p_{12}p_{21}. $
 \begin{frame}
 
     \begin{block}{Definitions}
-        A \emph{statistical model} $\mc{M}$ is a subset of $\Delta_{rc-1}$. It represents the set of all candidates for the unknown distribution $p$.
+        \begin{itemize}
+        \item A \emph{statistical model} $\mc{M}$ is a subset of $\Delta_{rc-1}$. It represents the set of all candidates for the unknown distribution $p$.
 
-        The \emph{independence model} for $X$ and $Y$ is the set
+        \item The \emph{independence model} for $X$ and $Y$ is the set
         $$ \mc{M}_{X \indep Y} := \Set{ p \in \Delta_{rc - 1} | \rank(p) = 1 }. $$
+        \end{itemize}
     \end{block}
 
     $\mc{M}_{X \indep Y}$ is the intersection of $\Delta_{rc-1}$ and the set of all matrices $p = (p_{ij})$ such that
