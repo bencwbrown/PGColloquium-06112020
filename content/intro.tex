@@ -2,16 +2,19 @@
 
 \begin{frame}{\emph{``Does Watching Football on TV Cause Hair Loss?''}}
     
-    In a fictional study, 296 British subjects between the ages of 40 -- 50 were asked about their hair loss and how much football they watch on television.
-        
-    \begin{block}{$3 \times 3$ Contingency Table}
+    \begin{itemize}
+        \item 296 British subjects were asked about their hair loss and how much football they watch on television, \cite{DMJSDS2003}.
+    \end{itemize}
 
-    We can represent the responses in a $3\times 3$ \emph{contingency table}:
+    \begin{block}{Contingency Table}
+
+    One can represent the responses in a $3\times 3$ \emph{contingency table}:
 
     \begin{table}[h]
+    \vspace{12pt}
         \begin{tabular}{@{}lcccc@{}} 
         & &  \multicolumn{3}{c}{Hair Amount}\\\cmidrule{3-5} 
-        TV Time & & lots & medium & balding\\ \midrule 
+        TV Hours & & lots & medium & balding\\ \midrule 
         $\geq 2$h & & 51 & 45 & 33 \\ 
         $2-6$ h & & 28 & 30 & 29 \\ 
         $\geq 6$h & & 15 & 27 & 38\\\bottomrule
@@ -19,7 +22,9 @@
     \end{table} 
     \end{block}
 
-    Based on the data, are these two random variables independent, or is there a correlation?
+    \begin{itemize}
+        \item Is there an association between the variables, or are they independent?
+    \end{itemize}
 
 \end{frame}
 
@@ -39,8 +44,9 @@
     \end{block}
 
     \begin{itemize}
-        \item Independence means that the $(2 \times 2)$-minors of the data matrix $M$ should vanish, but in fact they are all strictly quite positive, suggesting a positive correlation!
-        \item For example, the top left $(2 \times 2)$-minor equals: $51 \cdot 30 - 45 \cdot 28 = 1530 - 1260 = 270 \neq 0$.
+        \item Independence $\implies$ all $(2 \times 2)$-minors of $M$ vanish:
+            $$ \text{Odds Ratio} = \frac{ m_{ij}\cdot m_{(i+1)(j+1)} } { m_{(i+1)j} \cdot m_{i(j+1)} } = 0, \quad (\text{for all } i,j). $$
+        \item But (for example): $51 \cdot 30 - 45 \cdot 28 = 1530 - 1260 = 270 \neq 0\ldots $?
     \end{itemize}
 
 \end{frame}
@@ -48,7 +54,7 @@
 \begin{frame}{\emph{``Does Watching Football on TV Cause Hair Loss?''}}
 
     \begin{itemize}
-        \item A better explanation for our data is obtained by identifying a certain \emph{hidden variable}, which is the \emph{gender identification} of the respondents:
+        \item A better explanation is obtained by identifying a certain \emph{hidden variable}, which is the \emph{gender identification} of the respondents:
     \end{itemize}
 
     $$ M  = M_{m} + M_{f} = 
@@ -64,9 +70,9 @@
     \end{bmatrix}}_{170 \text{ female}}.  $$
 
     \begin{block}{Alternative Hypothesis}
-        Instead, we have \emph{conditional independence}:
+        Instead, we include \emph{conditional independence}:
         \begin{equation*}
-            H_{0}: \text{ \emph{Football on TV \& Hair Loss are Independent} given \emph{Gender.}}
+            H_{1}: \text{ \emph{Football on TV \& Hair Loss are Independent} given \emph{Gender.}}
         \end{equation*}
     \end{block}
 
