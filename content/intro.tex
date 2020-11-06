@@ -15,7 +15,7 @@
         \begin{tabular}{@{}lcccc@{}} 
         & &  \multicolumn{3}{c}{Hair Amount}\\\cmidrule{3-5} 
         TV Hours & & lots & medium & balding\\ \midrule 
-        $\geq 2$h & & 51 & 45 & 33 \\ 
+        $\leq 2$h & & 51 & 45 & 33 \\ 
         $2-6$ h & & 28 & 30 & 29 \\ 
         $\geq 6$h & & 15 & 27 & 38\\\bottomrule
         \end{tabular}
@@ -44,9 +44,9 @@
     \end{block}
 
     \begin{itemize}
-        \item Independence $\implies$ all $(2 \times 2)$-minors of $M$ vanish:
-            $$ \text{Odds Ratio} = \frac{ m_{ij}\cdot m_{(i+1)(j+1)} } { m_{(i+1)j} \cdot m_{i(j+1)} } = 0, \quad (\text{for all } i,j). $$
-        \item But (for example): $51 \cdot 30 - 45 \cdot 28 = 1530 - 1260 = 270 \neq 0\ldots $?
+        \item Independence $\implies$ odds ratios all equal one:
+            $$ \text{Odds Ratio} = \frac{ m_{ij}\cdot m_{(i+1)(j+1)} } { m_{(i+1)j} \cdot m_{i(j+1)} } = 1, \quad (\text{for all } i,j). $$
+        \item But (for example): $51 \cdot 30 - 45 \cdot 28 = 1530 - 1260 = 270 \neq 0\, \ldots\, $?
     \end{itemize}
 
 \end{frame}
